@@ -13,25 +13,3 @@ body {
     justify-content: center;
   }
 }
-
-.container {
-  height: 40rem;
-  width: 40rem;
-  background-color: red;
-  display: flex;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  gap: 1rem;
-}
-
-.card {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-
-  &__image {
-    width: 5rem;
-  }
-}

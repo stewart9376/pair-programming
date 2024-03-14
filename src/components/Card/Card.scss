@@ -1,11 +1,90 @@
 .card {
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  animation: 2s hideCard linear;
+  width: 5rem;
+  height: 4rem;
+  padding: 1rem;
+  background-color: aliceblue;
+
+  @keyframes hideCard {
+    0%,
+    70% {
+      transform: rotatey(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
   &__image {
-    width: 5rem;
+    width: 100%;
+    transform: scale(0);
+    animation: 2s hideImage linear;
+  }
+  @keyframes hideImage {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+}
+.card__image--matched {
+  background-color: green;
+  animation: 2s viewCard linear;
+  @keyframes viewCard {
+    0% {
+      transform: scale(0);
+    }
+    20%,
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+.card--matched {
+  background-color: green;
+  animation: 2s viewCard linear;
+  @keyframes viewCard {
+    0%,
+    70% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+.card--unmatched {
+  background-color: red;
+  animation: 2s hideCard linear;
+  @keyframes hideImage {
+    0%,
+    70% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+}
+
+.card--flipped {
+  animation: 2s viewCard linear;
+}
+@keyframes viewCard {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
